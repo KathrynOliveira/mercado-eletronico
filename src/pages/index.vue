@@ -1,13 +1,14 @@
-<script>
+<script lang="ts">
 import OrderCardSkeleton from "@/components/OrderCardSkeleton.vue";
 import OrderCard from "../components/OrderCard.vue";
 import OrderDetail from "@/components/OrderDetail.vue";
+import { Order } from "@/types/order";
 
 export default {
   components: { OrderCard, OrderDetail, OrderCardSkeleton },
   data() {
     return {
-      orders: {},
+      orders: {} as Order,
       details: false,
       isLoading: true,
     };
@@ -21,7 +22,7 @@ export default {
       if (!response.ok) {
         throw new Error(`Erro na requisição: ${response.status}`);
       }
-      const data = await response.json();
+      const data: Order = await response.json();
       this.orders = data;
     } catch (err) {
       console.error("Erro:", err);
