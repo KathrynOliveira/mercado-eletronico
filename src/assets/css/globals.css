@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer components {
+    /* Linha com ícone + texto cinza */
+    .icon-text {
+      @apply flex flex-row gap-1 text-xs text-gray-500;
+    }
+  
+    /* Variante com neutral */
+    .icon-text-neutral {
+      @apply flex flex-row gap-1 text-xs text-neutral-500;
+    }
+  
+    /* Linha de contato (ícone + texto alinhado ao centro) */
+    .contact-item {
+      @apply flex items-center gap-1 text-xs text-neutral-500;
+    }
+  
+    /* Container genérico de card */
+    .card {
+      @apply rounded-lg w-full bg-white;
+    }
+  
+    /* Card de endereço */
+    .address-card {
+      @apply rounded-lg shadow bg-white w-full  min-h-[160px] min-w-[328px] gap-1 p-4;
+    }
+  
+    /* Coluna de informações (empilhadas) */
+    .info-col {
+      @apply flex flex-col gap-1 text-xs;
+    }
+  }
+  
