@@ -1,4 +1,4 @@
-import app from "./api/index.js";
+import app from "./api/orders/index.js";
 
 const PORT = 3000;
 app.listen(PORT, () => {
