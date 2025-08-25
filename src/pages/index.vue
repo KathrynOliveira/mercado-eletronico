@@ -19,7 +19,7 @@ export default {
   async created() {
     try {
       this.isLoading = true;
-      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:4173';
+      const baseUrl = 'https://mercado-eletronico.vercel.app/api';
 
       const response = await axios({
         method: 'get',
