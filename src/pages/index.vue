@@ -19,25 +19,14 @@ export default {
   async created() {
     try {
       this.isLoading = true;
-      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:4173';
+      // const baseUrl = import.meta.env.VITE_API_URL;
+      const response = await fetch('https://api.mercadoe.space/orders/1');
 
-      const response = await axios({
-        method: 'get',
-        url: `${baseUrl}/orders/1`,
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        timeout: 5000,
-        validateStatus: (status) => {
-          return status >= 200 && status < 500;
-        }
-      });
-
-      if (response.status === 200) {
-        this.orders = response.data;
-      } else {
+      if (!response.ok) {
         throw new Error(`Erro na requisição: ${response.status}`);
       }
+      const data: Order = await response.json();
+      this.orders = data;
     } catch (err) {
       console.error("Erro:", err);
       this.error = err.message;
