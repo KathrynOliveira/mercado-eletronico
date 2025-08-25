@@ -1,29 +1,68 @@
-# mercado-eletronico
+# Mercado Eletrônico - Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+![Vue 3](https://img.shields.io/badge/Vue-3.2.45-brightgreen?logo=vue.js)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.3.3-blue?logo=tailwind-css)
+![Vitest](https://img.shields.io/badge/Vitest-0.34.0-orange)
 
-## Recommended IDE Setup
+Frontend do sistema **Mercado Eletrônico**, desenvolvido em **Vue 3**, com integração a uma API REST para gerenciar pedidos (orders), fornecedores (suppliers) e endereços (Address).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Customize configuration
+## 🛠️ Tecnologias utilizadas
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Framework:** Vue 3   
+- **Estilização:** Tailwind CSS    
+- **Backend:** Node + Express
+- **Testes unitários:** Vitest + Vue Test Utils   
 
-## Project Setup
+## 📦 Funcionalidades
 
-```sh
+- Listagem de pedidos com detalhes do comprador, fornecedor e endereços  
+- Skeleton loader enquanto os dados são carregados  
+- Manipulação de erros em requisições fetch  
+- Componentes reutilizáveis 
+- Testes unitários simulando respostas da API e renderização do componente  
+- Proxy backend via Express para contornar bloqueio de CORS em localhost:
+  - Um servidor Node/Express faz as requisições para a API externa  
+  - O frontend consome os dados do Express, evitando bloqueio de CORS no navegador  
+  - Permite desenvolver localmente sem depender de permissões CORS da API externa
+
+
+## 🚀 Como clonar e rodar o projeto
+
+1. Clone o repositório:
+
+```bash
+git clone git@github.com:KathrynOliveira/mercado-eletronico.git
+```
+
+2. Entre na pasta do projeto:
+```bash
+cd mercado-eletronico
+```
+
+3. Instale as dependências:
+ ```bash
 npm install
+```  
+
+4. Crie um arquivo .env com a URL da API:
+```bash
+VITE_API_URL=https://sua-api.com
 ```
 
-### Compile and Hot-Reload for Development
+5. Rode a aplicação:
+```bash
+npm run dev && node server.js
+``` 
 
-```sh
-npm run dev
-```
+1. Para rodar o teste unitário:
+ ```bash
+npm run test
+```   
 
-### Compile and Minify for Production
+### 🧑‍💻 Desenvolvido por:
+[Kathryn Oliveira](https://github.com/KathrynOliveira)
 
-```sh
-npm run build
-```
+---
+
