@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors({
   origin: [
-    'https://https://mercado-eletronico.vercel.app/',
+    'https://mercado-eletronico.vercel.app/',
     'http://localhost:5173'
   ]
 }));

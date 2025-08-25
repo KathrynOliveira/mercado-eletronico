@@ -17,4 +17,8 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
   },
+   build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  }
 })
