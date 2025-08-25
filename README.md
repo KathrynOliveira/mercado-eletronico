@@ -62,7 +62,7 @@ npm run dev && node server.js
 npm run test
 ```   
 
-### 🧑‍💻 Desenvolvido por:
+### 👩‍💻 Desenvolvido por:
 [Kathryn Oliveira](https://github.com/KathrynOliveira)
 
 ---
