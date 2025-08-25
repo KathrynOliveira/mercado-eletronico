@@ -19,8 +19,8 @@ export default {
   async created() {
     try {
       this.isLoading = true;
-      // const baseUrl = import.meta.env.VITE_API_URL;
-      const response = await fetch('https://api.mercadoe.space/orders/1');
+      const baseUrl = import.meta.env.VITE_API_URL;
+      const response = await fetch(`${baseUrl}/orders/1`);
 
       if (!response.ok) {
         throw new Error(`Erro na requisição: ${response.status}`);
@@ -45,8 +45,8 @@ export default {
 
 <template>
   <div class="p-4">
-    <OrderCardSkeleton :loading="isLoading" />
-    <OrderCard v-if="!isLoading" :order="orders" @click="goToDetail()" />
-    <OrderDetail v-if="details" :order="orders" />
+      <OrderCardSkeleton :loading="isLoading" />
+      <OrderCard v-if="!isLoading" :order="orders" @click="goToDetail()" />
+      <OrderDetail v-if="details":order="orders" />
   </div>
 </template>
