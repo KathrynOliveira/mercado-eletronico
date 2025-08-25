@@ -6,7 +6,7 @@ import serverless from "serverless-http";
 const app = express();
 
 app.use(cors({
-  rigin: [
+  origin: [
     'https://https://mercado-eletronico.vercel.app/',
     'http://localhost:5173'
   ]
