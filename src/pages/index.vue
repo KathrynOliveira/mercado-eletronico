@@ -4,6 +4,8 @@ import OrderCard from "../components/OrderCard.vue";
 import OrderDetail from "@/components/OrderDetail.vue";
 import { Order } from "@/types/order";
 
+import axios from 'axios';
+
 export default {
   components: { OrderCard, OrderDetail, OrderCardSkeleton },
   data() {
@@ -17,14 +19,25 @@ export default {
   async created() {
     try {
       this.isLoading = true;
-      const baseUrl = import.meta.env.VITE_API_URL || '/api';
-      const response = await fetch(`${baseUrl}/orders/1`);
+      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:4173';
 
-      if (!response.ok) {
+      const response = await axios({
+        method: 'get',
+        url: `${baseUrl}/orders/1`,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        timeout: 5000,
+        validateStatus: (status) => {
+          return status >= 200 && status < 500;
+        }
+      });
+
+      if (response.status === 200) {
+        this.orders = response.data;
+      } else {
         throw new Error(`Erro na requisição: ${response.status}`);
       }
-      const data: Order = await response.json();
-      this.orders = data;
     } catch (err) {
       console.error("Erro:", err);
       this.error = err.message;
