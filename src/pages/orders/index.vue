@@ -1,6 +1,6 @@
 <script lang="ts">
 import OrderCardSkeleton from "@/components/OrderCardSkeleton.vue";
-import OrderCard from "../components/OrderCard.vue";
+import OrderCard from "@/components/OrderCard.vue";
 import OrderDetail from "@/components/OrderDetail.vue";
 import { Order } from "@/types/order";
 
