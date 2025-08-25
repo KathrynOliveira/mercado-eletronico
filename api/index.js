@@ -5,11 +5,10 @@ import serverless from "serverless-http";
 
 const app = express();
 
-// ⚠️ Ajuste o domínio conforme seu front em produção
 app.use(cors({
   origin: [
-    'https://seu-projeto.vercel.app',
-    'http://localhost:5173' // Para desenvolvimento local
+    'https://https://mercado-eletronico.vercel.app/',
+    'http://localhost:5173'
   ]
 }));
 app.use(express.json());
