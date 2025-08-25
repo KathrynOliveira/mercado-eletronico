@@ -11,6 +11,7 @@ export default {
       orders: {} as Order,
       details: false,
       isLoading: true,
+      error: null,
     };
   },
   async created() {
@@ -43,7 +44,7 @@ export default {
 <template>
   <div class="p-4">
       <OrderCardSkeleton :loading="isLoading" />
-      <OrderCard v-if="!isLoading" :order="this.orders" @click="goToDetail()" />
-      <OrderDetail v-if="this.details":order="this.orders" />
+      <OrderCard v-if="!isLoading" :order="orders" @click="goToDetail()" />
+      <OrderDetail v-if="details":order="orders" />
   </div>
 </template>
