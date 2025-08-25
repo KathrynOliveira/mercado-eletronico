@@ -6,24 +6,27 @@ import serverless from "serverless-http";
 const app = express();
 
 app.use(cors({
-  origin: '*', // Permite todas as origens
-  methods: ['GET'], // Métodos permitidos
-  allowedHeaders: ['Content-Type', 'Authorization']
+  rigin: [
+    'https://https://mercado-eletronico.vercel.app/',
+    'http://localhost:5173'
+  ]
+  // methods: ['GET'], // Métodos permitidos
+  // allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 
-const axiosInstance = axios.create({
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json'
-  },
-  timeout: 5000 // timeout de 5 segundos
-});
+// const axiosInstance = axios.create({
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Accept': 'application/json'
+//   },
+//   timeout: 5000 // timeout de 5 segundos
+// });
 
 // Rota proxy
 app.get("/api/orders/1", async (req, res) => {
   try {
-    const response = await axiosInstance.get("https://api.mercadoe.space/orders/1");
+    const response = await axios.get("https://api.mercadoe.space/orders/1");
     res.json(response.data);
   } catch (err) {
     if (err.response) {
