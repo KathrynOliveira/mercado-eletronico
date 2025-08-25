@@ -19,7 +19,7 @@ export default {
   async created() {
     try {
       this.isLoading = true;
-      const baseUrl = 'https://mercado-eletronico.vercel.app';
+      const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:4173';
 
       const response = await axios({
         method: 'get',
@@ -56,8 +56,8 @@ export default {
 
 <template>
   <div class="p-4">
-      <OrderCardSkeleton :loading="isLoading" />
-      <OrderCard v-if="!isLoading" :order="orders" @click="goToDetail()" />
-      <OrderDetail v-if="details":order="orders" />
+    <OrderCardSkeleton :loading="isLoading" />
+    <OrderCard v-if="!isLoading" :order="orders" @click="goToDetail()" />
+    <OrderDetail v-if="details" :order="orders" />
   </div>
 </template>
