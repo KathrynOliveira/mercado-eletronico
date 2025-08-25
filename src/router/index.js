@@ -2,11 +2,20 @@ import { createRouter, createWebHistory } from 'vue-router'
 import OrdersList from '../pages/index.vue'
 
 const routes = [
-  { path: '/', redirect: '/orders' },
-  { path: '/orders', component: OrdersList },
+  { 
+    path: '/', 
+    redirect: { name: 'orders' }
+  },
+  { 
+    path: '/orders', 
+    name: 'orders',
+    component: OrdersList 
+  }
 ]
 
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes
 })
+
+export default router
