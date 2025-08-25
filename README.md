@@ -18,9 +18,10 @@ Frontend do sistema **Mercado Eletrônico**, desenvolvido em **Vue 3**, com inte
 ## 📦 Funcionalidades
 
 - Listagem de pedidos com detalhes do comprador, fornecedor e endereços  
+- Layout Responsivo 
+- Componentes reutilizáveis
 - Skeleton loader enquanto os dados são carregados  
 - Manipulação de erros em requisições fetch  
-- Componentes reutilizáveis 
 - Testes unitários simulando respostas da API e renderização do componente  
 - Proxy backend via Express para contornar bloqueio de CORS em localhost:
   - Um servidor Node/Express faz as requisições para a API externa  
