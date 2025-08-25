@@ -6,7 +6,12 @@ import serverless from "serverless-http";
 const app = express();
 
 // ⚠️ Ajuste o domínio conforme seu front em produção
-app.use(cors({ origin: "*" }));
+app.use(cors({
+  origin: [
+    'https://seu-projeto.vercel.app',
+    'http://localhost:5173' // Para desenvolvimento local
+  ]
+}));
 app.use(express.json());
 
 // Rota proxy
