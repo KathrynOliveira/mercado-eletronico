@@ -13,4 +13,8 @@ export default defineConfig({
       '@icons': fileURLToPath(new URL('./public/images/icons', import.meta.url))
     },
   },
+  test: {
+    globals: true,
+    environment: "jsdom",
+  },
 })
