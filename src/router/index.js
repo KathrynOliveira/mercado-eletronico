@@ -3,8 +3,8 @@ import OrdersList from '../pages/index.vue'
 
 const routes = [
   { 
-    path: '/', 
-    redirect: { name: 'orders' }
+    path: '/:pathMatch(.*)*', 
+    redirect: '/orders'
   },
   { 
     path: '/orders', 
