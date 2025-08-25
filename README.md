@@ -1,4 +1,4 @@
-# Mercado Eletrônico - Frontend
+# Lista de Pedidos - Frontend
 
 ![Vue 3](https://img.shields.io/badge/Vue%20js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -7,7 +7,7 @@
 ![Node](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white)
 
-Frontend do sistema **Mercado Eletrônico**, desenvolvido em **Vue 3**, com integração a uma API REST para gerenciar pedidos (orders), fornecedores (suppliers) e endereços (Address).
+Frontend do sistema de **Pedidos**, desenvolvido em **Vue 3**, com integração a uma API REST para gerenciar pedidos (orders), fornecedores (suppliers) e endereços (Address).
 
 ---
 
@@ -17,6 +17,25 @@ Frontend do sistema **Mercado Eletrônico**, desenvolvido em **Vue 3**, com inte
 - **Estilização:** Tailwind CSS    
 - **Backend:** Node + Express
 - **Testes unitários:** Vitest + Vue Test Utils   
+
+## 📁 Estrututa do Projeto
+```
+mercado-eletronico/
+├── src/
+    ├── __tests__/
+    ├── api/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+    ├── types/
+│   ├── App.vue
+│   └── main.js
+├── public/
+├── .env
+├── package.json
+└── vite.config.js
+```
+
 
 ## 📦 Funcionalidades
 
@@ -52,12 +71,13 @@ npm install
 
 4. Crie um arquivo .env com a URL da API:
 ```bash
-VITE_API_URL=https://sua-api.com
+VITE_API_URL=https://localhost:3000/api
 ```
 
 5. Rode a aplicação:
 ```bash
-npm run dev && node server.js
+npm run dev 
+node server.js
 ``` 
 
 1. Para rodar o teste unitário:
