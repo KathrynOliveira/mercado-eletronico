@@ -6,7 +6,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [vue(), vueDevTools(), tailwindcss()],
-  base: '/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -22,7 +21,4 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets'
   },
-  server: {
-    port: 3000
-  }
 })
