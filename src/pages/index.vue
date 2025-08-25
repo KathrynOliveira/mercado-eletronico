@@ -19,7 +19,7 @@ export default {
   async created() {
     try {
       this.isLoading = true;
-      const baseUrl = 'https://mercado-eletronico.vercel.app/api';
+      const baseUrl = 'https://mercado-eletronico.vercel.app';
 
       const response = await axios({
         method: 'get',
