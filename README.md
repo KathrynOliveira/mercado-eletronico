@@ -19,7 +19,6 @@ Frontend do sistema de **Pedidos**, desenvolvido em **Vue 3**, com integração 
 
 - **Framework:** Vue 3   
 - **Estilização:** Tailwind CSS    
-- **Backend:** Node + Express
 - **Testes unitários:** Vitest + Vue Test Utils   
 
 ## 📁 Estrututa do Projeto
@@ -27,7 +26,6 @@ Frontend do sistema de **Pedidos**, desenvolvido em **Vue 3**, com integração 
 mercado-eletronico/
 ├── src/
     ├── __tests__/
-    ├── api/
 │   ├── assets/
 │   ├── components/
 │   ├── pages/
@@ -49,10 +47,10 @@ mercado-eletronico/
 - Skeleton loader enquanto os dados são carregados  
 - Manipulação de erros em requisições fetch  
 - Testes unitários simulando respostas da API e renderização do componente  
-- Proxy backend via Express para contornar bloqueio de CORS em localhost:
-  - Um servidor Node/Express faz as requisições para a API externa  
-  - O frontend consome os dados do Express, evitando bloqueio de CORS no navegador  
-  - Permite desenvolver localmente sem depender de permissões CORS da API externa
+- Proxy via vite para contornar bloqueio de CORS
+  - O servidor faz as requisições para a API externa  
+  - O frontend consome os dados, evitando bloqueio de CORS no navegador  
+  - Permite desenvolver sem depender de permissões CORS da API externa
 
 
 ## 🚀 Como clonar e rodar o projeto
