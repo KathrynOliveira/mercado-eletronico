@@ -10,6 +10,10 @@
 Frontend do sistema de **Pedidos**, desenvolvido em **Vue 3**, com integração a uma API REST para gerenciar pedidos (orders), fornecedores (suppliers) e endereços (Address).
 
 ---
+## 🚀 Acesse o Projeto
+
+👉 [Clique aqui](https://mercado-eletronico.vercel.app/)
+
 
 ## 🛠️ Tecnologias utilizadas
 
