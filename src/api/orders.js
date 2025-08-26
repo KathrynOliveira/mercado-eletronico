@@ -1,54 +1,60 @@
-import express from "express";
-import axios from "axios";
-import cors from "cors";
-import serverless from "serverless-http";
+// import express from "express";
+// import axios from "axios";
+// import cors from "cors";
+// import serverless from "serverless-http";
 
-const app = express();
+// const app = express();
 
-app.use(cors({
-  origin: [
-    'https://mercado-eletronico.vercel.app/',
-    'http://localhost:5173',
-  ],
-    methods: ['GET'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
-app.use(express.json());
+// app.use(cors({
+//   origin: [
+//     'https://mercado-eletronico.vercel.app',
+//     'http://localhost:4173'
+//   ],
+//     methods: ['GET'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+// app.use(express.json());
 
-// Rota proxy
-app.get("/api/orders/1", async (req, res) => {
-  try {
-    const response = await axios.get("https://api.mercadoe.space/orders/1");
-    res.json(response.data);
-  } catch (error) {
-    console.error("Erro na requisição:", error.message);
+// const axiosInstance = axios.create({
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Accept': 'application/json'
+//   },
+//   timeout: 5000 // timeout de 5 segundos
+// });
 
-    if (error.response) {
-      // Erro vindo da API (status 4xx ou 5xx)
-      return res.status(error.response.status).json({
-        error: error.response.data?.message || "Erro na API externa",
-        status: error.response.status,
-      });
-    }
+// // Rota proxy
+// app.get("/api/orders/1", async (req, res) => {
+//   try {
+//     const response = await axiosInstance.get("https://api.mercadoe.space/orders/1");
+//     res.json(response.data);
+//   } catch (error) {
+//     console.error("Erro na requisição:", error.message);
 
-    if (error.request) {
-      // Erro de rede ou timeout
-      return res.status(503).json({
-        error: "Serviço indisponível",
-        details: error.message,
-      });
-    }
+//     if (err.response) {
+//       // Erro da API
+//       res.status(err.response.status).json({
+//         error: err.response.data,
+//         status: err.response.status
+//       });
+//     } else if (err.request) {
+//       // Erro de conexão
+//       res.status(503).json({
+//         error: "Serviço indisponível",
+//         details: err.message
+//       });
+//     } else {
+//       // Outros erros
+//       res.status(500).json({
+//         error: "Erro interno",
+//         details: err.message
+//       });
+//     }
+//   }
+// });
 
-    // Erro inesperado
-    res.status(500).json({
-      error: "Erro interno do servidor",
-      details: error.message,
-    });
-  }
-});
+// // 👉 Exporta para Vercel
+// export const handler = serverless(app);
 
-// 👉 Exporta para Vercel
-export const handler = serverless(app);
-
-// 👉 Exporta para rodar localmente
-export default app;
+// // 👉 Exporta para rodar localmente
+// export default app;

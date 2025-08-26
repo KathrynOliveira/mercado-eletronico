@@ -21,4 +21,14 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets'
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://api.mercadoe.space',
+        changeOrigin: true
+        ,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      }
+     }
+   }
 })
