@@ -8,8 +8,10 @@ const app = express();
 app.use(cors({
   origin: [
     'https://mercado-eletronico.vercel.app/',
-    'http://localhost:5173'
-  ]
+    'http://localhost:5173',
+  ],
+    methods: ['GET'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 

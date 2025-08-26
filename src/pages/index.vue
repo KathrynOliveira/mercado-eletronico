@@ -27,6 +27,7 @@ export default {
       try {
         this.isLoading = true;
         const baseUrl = import.meta.env.VITE_API_URL;
+
         const response = await fetch(`${baseUrl}/orders/1`);
 
         if (!response.ok) {
