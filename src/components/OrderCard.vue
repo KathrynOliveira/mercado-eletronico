@@ -21,13 +21,21 @@ export default {
       location,
       phone,
       user,
+      isLoading: false,
     };
   },
+
+  methods: {
+    reloadOrders() {
+      this.$emit('reload-orders');
+    }
+  }
 };
 </script>
 
 <template>
-  <div class="w-full h-auto md:h-[110px] flex flex-col md:flex-row gap-6 card cursor-pointer"
+  <div v-if="Object.values(this.order).length > 0"
+    class="w-full h-auto md:h-[110px] flex flex-col md:flex-row gap-6 card cursor-pointer"
     title="Clique para expandir ou recolher">
     <!-- Pre Order -->
     <div
@@ -74,6 +82,16 @@ export default {
           <img :src="info" />
         </p>
       </div>
+    </div>
+  </div>
+  <div v-else
+    class="w-full h-auto md:h-[110px] flex flex-col md:flex-row items-center justify-center gap-4 card cursor-default shadow">
+    <div class="text-center">
+      <p class="text-red-600 mb-2">Erro ao retornar os pedidos</p>
+      <button @click="reloadOrders"
+        class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors cursor-pointer">
+        Tentar novamente
+      </button>
     </div>
   </div>
 </template>
