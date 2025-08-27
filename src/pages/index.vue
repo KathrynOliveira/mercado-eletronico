@@ -28,7 +28,6 @@ export default {
     async fetchOrder() {
       try {
         this.isLoading = true;
-        const baseUrl = import.meta.env.VITE_API_URL;
 
         const response = await axios({
           method: 'get',
