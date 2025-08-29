@@ -1,11 +1,10 @@
 # Lista de Pedidos - Frontend
 
 ![Vue 3](https://img.shields.io/badge/Vue%20js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 ![Vitest](https://img.shields.io/badge/Vitest-%236E9F18?style=for-the-badge&logo=Vitest&logoColor=%23fcd703)
-![Node](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white)
 
 Frontend do sistema de **Pedidos**, desenvolvido em **Vue 3**, com integração a uma API REST para gerenciar pedidos (orders), fornecedores (suppliers) e endereços (Address).
 
@@ -17,7 +16,8 @@ Frontend do sistema de **Pedidos**, desenvolvido em **Vue 3**, com integração 
 
 ## 🛠️ Tecnologias utilizadas
 
-- **Framework:** Vue 3   
+- **Framework:** Vue 3
+- **Linguagem:** TypeScript 
 - **Estilização:** Tailwind CSS    
 - **Testes unitários:** Vitest + Vue Test Utils   
 
