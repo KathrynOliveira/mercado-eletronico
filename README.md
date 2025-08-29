@@ -71,18 +71,13 @@ cd mercado-eletronico
 npm install
 ```  
 
-4. Crie um arquivo .env com a URL da API:
-```bash
-VITE_API_URL=https://localhost:3000/api
-```
-
-5. Rode a aplicação:
+4. Rode a aplicação:
 ```bash
 npm run dev 
 node server.js
 ``` 
 
-1. Para rodar o teste unitário:
+5. Para rodar o teste unitário:
  ```bash
 npm run test
 ```   
